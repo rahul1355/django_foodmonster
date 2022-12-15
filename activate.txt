@@ -15,3 +15,18 @@ def activate(request,udi64,token):
 	else:
 		messages.error(request,'Invalid activation link')
 		return redirect('myAccount')
+
+
+2..In html file
+
+{% autoescape off %}
+
+	Hi {{user.first_name}}
+ 	
+	please click on below link to confirm your accout registeration
+	
+	http://{{domain}} {% url 'activate' uid64=uid token=token %}
+
+	http://127.0.0.1:8000/activate/MTM/iugweiufg278392isndd	
+
+{% endautoescape %}
